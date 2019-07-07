@@ -1,4 +1,10 @@
 #include "Robot.h"
+Robot::Robot()
+: drive(LEFT_CAN, RIGHT_CAN),
+control(USB_PORT)
+{
+
+}
 
 void Robot::RobotInit() {}
 
@@ -10,8 +16,16 @@ void Robot::AutonomousPeriodic() {}
 
 void Robot::TeleopInit() {}
 
-void Robot::TeleopPeriodic() {}
+void Robot::TeleopPeriodic()
+{
+ drive.leftDrive(control.GetRawAxis(LEFT_JOYSTICK));
+ drive.rightDrive(control.GetRawAxis(RIGHT_JOYSTICK));
+}
 
 void Robot::TestPeriodic() {}
 
-int main() { return frc::StartRobot<Robot>(); }
+int main()
+{
+
+ return frc::StartRobot<Robot>(); 
+}
