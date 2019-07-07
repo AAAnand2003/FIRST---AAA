@@ -11,7 +11,7 @@ rTal(rightTalon)
 
 void TankDrive::leftDrive(float left)
 {
-   lTal.Set(left);   
+   lTal.Set(left*-1);   
 }
 
 void TankDrive::rightDrive(float right)
