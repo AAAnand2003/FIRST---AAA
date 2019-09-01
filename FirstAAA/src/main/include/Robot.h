@@ -4,6 +4,7 @@
 #include "Prefs.h"
 #include "TankDrive.h"
 #include <frc/Joystick.h>
+#include "NerfShooter.h"
 
 class Robot : public frc::IterativeRobot {
  public:
@@ -19,6 +20,7 @@ class Robot : public frc::IterativeRobot {
  private:
  TankDrive drive;
  frc::Joystick control;
+ NerfShooter shooter;
 
  
  
